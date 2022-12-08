@@ -16,20 +16,23 @@ int main()
     int dice; // stores the random number
     char choice;
     srand(time(0)); // "Seed" the random generator
-    
+    system ("Color 2F"); //CLI color changer
     cout << "\n\nWhat's your Name :: ";
     getline(cin, playerName);
     cout<<"thanks for telling us your name";
+    system ("Color 1"); //CLI color changer
     cout << "\n\nEnter the total balance to play game : $ ";
     cin >> balance;
     do
     {
         system("cls");
         rules();
+	    system ("Color 2"); //CLI color changer
         cout << "\n\nYour current balance is : $" << balance << "\n";
 // Get player's betting balance
         do
         {
+		system ("Color 3"); //CLI color changer
             cout << "Hey, " << playerName<<", Enter how much amount you want to bet : $";
             cin >> bettingAmount;
             if(bettingAmount > balance)
@@ -39,6 +42,7 @@ int main()
 // Get player's numbers
         do
         {
+		system ("Color 6"); //CLI color changer
             cout << "Guess any betting number from 1 to 10 :";
             cin >> guess;
             if(guess <= 0 || guess > 10)
@@ -48,6 +52,7 @@ int main()
         dice = rand()%10 + 1;
         if(dice == guess)
         {
+		system ("Color 5"); //CLI color changer
             cout << "\n\nCongratulation!! You have won : $" << bettingAmount * 15;
             balance = balance + bettingAmount * 15;
         }
@@ -60,6 +65,7 @@ int main()
         cout << "\n"<<playerName<<", You have balance of : $" << balance << "\n";
         if(balance == 0)
         {
+		system ("Color 4"); //CLI color changer
             cout << " Sorry! You have no money to play ";
             break;
         }
@@ -72,7 +78,7 @@ int main()
 }
 void display()
 {
-		
+		system ("Color 7"); //CLI color changer
 string var="\n=========================================================================================="
  "\n   CCCCC      A        SSSSSSSSS   IIIIIIIII  NN     NN    OOOOOOOO     "
  "\n CC          A  A      SS             III     NN N   NN   OO      OO    "
@@ -88,6 +94,7 @@ string var="\n==================================================================
 }
 void rules()
 {
+	system ("Color C"); //CLI color changer
     system("cls");
     cout << "\t\t======CASINO NUMBER GUESSING RULES!======\n";
     cout << "\t1. You have to choose a number between 1 to 10\n";
